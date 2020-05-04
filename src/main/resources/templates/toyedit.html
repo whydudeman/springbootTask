@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="htttp://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Toy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/plugins/themefisher-font/style.css" th:href="@{/plugins/themefisher-font/style.css}">
+    <!-- bootstrap.min css -->
+    <link rel="stylesheet" href="static/plugins/bootstrap/dist/css/bootstrap.min.css" th:href="@{/plugins/bootstrap/dist/css/bootstrap.min.css}">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="static/plugins/animate-css/animate.css" th:href="@{/plugins/animate-css/animate.css}">
+    <!-- Magnific popup css -->
+    <link rel="stylesheet" href="static/plugins/magnific-popup/dist/magnific-popup.css"  th:href="@{/plugins/magnific-popup/dist/magnific-popup.css}">
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" href="static/plugins/slick-carousel/slick/slick.css" th:href="@{/plugins/slick-carousel/slick/slick.css}">
+    <link rel="stylesheet" href="static/plugins/slick-carousel/slick/slick-theme.css" th:href="@{/plugins/slick-carousel/slick/slick-theme.css}">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="static/css/style.css" th:href="@{/css/style.css}">
+</head>
+<!--I need Toy dto here in this page-->
+<body>
+<div class="container">
+<div class="contact-form  wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
+    <div class="title text-center wow fadeIn" data-wow-duration="1500ms" >
+        <h2>Edit <span class="color">Toy</span> </h2>
+        <div class="border"></div>
+    </div>
+    <form id="contact-forms"th:action="@{/updateToy/{id}(id=${toy.id})}"
+          th:object="${toy}" method="POST">
+
+        <div class="form-group">
+            <input type="text" placeholder="Name of Toy" class="form-control" name="name" id="toyName" th:field="*{name}" >
+        </div>
+
+        <div class="form-group">
+            <input type="text" placeholder="Price of Toy" class="form-control" name="price" id="price" th:field="*{price}">
+        </div>
+        <div class="form-group">
+            <select class="form-control" th:field="*{categoryId}">
+                <option th:each="category : ${categories}"
+                        th:value="${category.id}"
+                        th:text="${category.name}">
+                </option>
+            </select>
+        </div>
+
+        <div id="cf-submit">
+            <input type="submit" id="contact-submit" class="btn btn-transparent" value="Edit">
+        </div>
+
+    </form>
+</div>
+</div>
+<!--</-->
+</body>
+</html>
