@@ -1,8 +1,7 @@
-package com.javaee.project.service;
+package com.javaee.project.project1.service;
 
-import com.javaee.project.model.Category;
-import com.javaee.project.model.Toy;
-import com.javaee.project.repositoty.CategoryRepo;
+import com.javaee.project.project1.model.Category;
+import com.javaee.project.project1.repository.CategoryRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

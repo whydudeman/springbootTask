@@ -1,11 +1,11 @@
-package com.javaee.project.controller;
+package com.javaee.project.project1.controller;
 
-import com.javaee.project.dto.CategoryDto;
-import com.javaee.project.dto.ToyDto;
-import com.javaee.project.model.Category;
-import com.javaee.project.model.Toy;
-import com.javaee.project.service.CategoryService;
-import com.javaee.project.service.ToyService;
+import com.javaee.project.project1.form.CategoryDto;
+import com.javaee.project.project1.form.ToyDto;
+import com.javaee.project.project1.model.Category;
+import com.javaee.project.project1.model.Toy;
+import com.javaee.project.project1.service.CategoryService;
+import com.javaee.project.project1.service.ToyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -87,6 +87,11 @@ public class CategoryController {
     @GetMapping(value = "deleteToy/{id}")
     public String deleteToy(@PathVariable("id") Long id,Model model){
         toyService.deleteById(id);
+        return "redirect:/index";
+    }
+
+    @GetMapping(value = "index/redirect")
+    public String redirectToMainPage(){
         return "redirect:/index";
     }
 

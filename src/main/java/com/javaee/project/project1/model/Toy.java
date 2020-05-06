@@ -1,4 +1,4 @@
-package com.javaee.project.model;
+package com.javaee.project.project1.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

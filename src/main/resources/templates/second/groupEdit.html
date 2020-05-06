@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="htttp://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit category</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/plugins/themefisher-font/style.css"
+          th:href="@{/plugins/themefisher-font/style.css}">
+    <!-- bootstrap.min css -->
+    <link rel="stylesheet" href="static/plugins/bootstrap/dist/css/bootstrap.min.css"
+          th:href="@{/plugins/bootstrap/dist/css/bootstrap.min.css}">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="static/plugins/animate-css/animate.css" th:href="@{/plugins/animate-css/animate.css}">
+    <!-- Magnific popup css -->
+    <link rel="stylesheet" href="static/plugins/magnific-popup/dist/magnific-popup.css"
+          th:href="@{/plugins/magnific-popup/dist/magnific-popup.css}">
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" href="static/plugins/slick-carousel/slick/slick.css"
+          th:href="@{/plugins/slick-carousel/slick/slick.css}">
+    <link rel="stylesheet" href="static/plugins/slick-carousel/slick/slick-theme.css"
+          th:href="@{/plugins/slick-carousel/slick/slick-theme.css}">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="static/css/style.css" th:href="@{/css/style.css}">
+</head>
+<body>
+<section class="bg-one about section">
+    <div class="container" id="courses">
+        <div class="row">
+            <div class="container">
+                <div class="contact-form  wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
+                    <div class="title text-center wow fadeIn" data-wow-duration="1500ms">
+                        <h2>Edit <span class="color">Category</span></h2>
+                        <div class="border"></div>
+                    </div>
+                    <form id="contact-form" th:action="@{/updateGroup/{id}(id=${group.id})}"
+                          th:object="${group}" method="POST">
+
+                        <div class="form-group">
+                            <input type="text" placeholder="Group Name" class="form-control" name="name" id="name"
+                                   th:field="*{name}">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Group short name" class="form-control" name="shortName"
+                                   id="shortName" th:field="*{shortName}">
+                        </div>
+                        <div id="cf-submits">
+                            <input type="submit" id="contact-submits" class="btn btn-transparent" value="Submit">
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+</html>

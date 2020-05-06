@@ -1,4 +1,4 @@
-package com.javaee.project.dto;
+package com.javaee.project.project1.form;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

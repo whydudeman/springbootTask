@@ -1,4 +1,4 @@
-package com.javaee.project.model;
+package com.javaee.project.project2.model;
 
 
 import lombok.Getter;
@@ -6,18 +6,22 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
+
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
-public class Category implements Serializable {
+@Table(name = "groups")
+public class Group implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
-
-
-    @Column(name = "name",nullable = false,unique = true)
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "short_name")
+    private String shortName;
+
 }
