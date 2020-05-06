@@ -7491,3 +7491,115 @@ org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as express
 2020-05-06 17:00:54.098  INFO 5249 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2020-05-06 17:00:54.099  INFO 5249 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2020-05-06 17:00:54.106  INFO 5249 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2020-05-06 17:33:30.476  INFO 4023 --- [main] com.javaee.project.ToysApplication       : Starting ToysApplication on whydudeman with PID 4023 (/media/nurbol/a220a7c6-a62d-46c1-bee8-e95553368e28/Downloads/JavaProjects/project (copy)/target/classes started by nurbol in /media/nurbol/a220a7c6-a62d-46c1-bee8-e95553368e28/Downloads/JavaProjects/project (copy))
+2020-05-06 17:33:30.480  INFO 4023 --- [main] com.javaee.project.ToysApplication       : No active profile set, falling back to default profiles: default
+2020-05-06 17:33:31.326  INFO 4023 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-06 17:33:31.404  INFO 4023 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 68ms. Found 5 JPA repository interfaces.
+2020-05-06 17:33:32.096  INFO 4023 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2020-05-06 17:33:32.110  INFO 4023 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-06 17:33:32.111  INFO 4023 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-06 17:33:32.204  INFO 4023 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-06 17:33:32.204  INFO 4023 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1624 ms
+2020-05-06 17:33:32.439  INFO 4023 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-06 17:33:32.522  INFO 4023 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-06 17:33:32.678  INFO 4023 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-06 17:33:32.825  INFO 4023 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-06 17:33:33.014  INFO 4023 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-06 17:33:33.037  INFO 4023 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2020-05-06 17:33:33.818  INFO 4023 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-06 17:33:33.824  INFO 4023 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 17:33:34.430  WARN 4023 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-06 17:33:34.579  INFO 4023 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-06 17:33:34.679  INFO 4023 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-06 17:33:34.850  INFO 4023 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2020-05-06 17:33:34.852  INFO 4023 --- [main] com.javaee.project.ToysApplication       : Started ToysApplication in 5.098 seconds (JVM running for 5.71)
+2020-05-06 17:33:52.987  INFO 4023 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-06 17:33:52.988  INFO 4023 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-06 17:33:52.994  INFO 4023 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-05-06 17:38:11.977  INFO 4023 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-06 17:38:11.981  INFO 4023 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 17:38:11.985  INFO 4023 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-05-06 17:38:11.998  INFO 4023 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-05-06 17:38:16.121  INFO 5054 --- [main] com.javaee.project.ToysApplication       : Starting ToysApplication on whydudeman with PID 5054 (/media/nurbol/a220a7c6-a62d-46c1-bee8-e95553368e28/Downloads/JavaProjects/project (copy)/target/classes started by nurbol in /media/nurbol/a220a7c6-a62d-46c1-bee8-e95553368e28/Downloads/JavaProjects/project (copy))
+2020-05-06 17:38:16.126  INFO 5054 --- [main] com.javaee.project.ToysApplication       : No active profile set, falling back to default profiles: default
+2020-05-06 17:38:17.010  INFO 5054 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-06 17:38:17.083  INFO 5054 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65ms. Found 5 JPA repository interfaces.
+2020-05-06 17:38:17.771  INFO 5054 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2020-05-06 17:38:17.784  INFO 5054 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-06 17:38:17.784  INFO 5054 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-06 17:38:17.879  INFO 5054 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-06 17:38:17.879  INFO 5054 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1684 ms
+2020-05-06 17:38:18.087  INFO 5054 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-06 17:38:18.164  INFO 5054 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-06 17:38:18.315  INFO 5054 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-06 17:38:18.426  INFO 5054 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-06 17:38:18.604  INFO 5054 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-06 17:38:18.624  INFO 5054 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2020-05-06 17:38:19.380  INFO 5054 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-06 17:38:19.386  INFO 5054 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 17:38:19.985  WARN 5054 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-06 17:38:20.131  INFO 5054 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-06 17:38:20.214  INFO 5054 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-06 17:38:20.402  INFO 5054 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2020-05-06 17:38:20.405  INFO 5054 --- [main] com.javaee.project.ToysApplication       : Started ToysApplication in 5.164 seconds (JVM running for 6.025)
+2020-05-06 17:38:22.856  INFO 5054 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-06 17:38:22.857  INFO 5054 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-06 17:38:22.864  INFO 5054 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2020-05-06 17:39:39.511  INFO 5054 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-06 17:39:39.514  INFO 5054 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 17:39:39.517  INFO 5054 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-05-06 17:39:39.533  INFO 5054 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-05-06 17:39:43.012  INFO 5287 --- [main] com.javaee.project.ToysApplication       : Starting ToysApplication on whydudeman with PID 5287 (/media/nurbol/a220a7c6-a62d-46c1-bee8-e95553368e28/Downloads/JavaProjects/project (copy)/target/classes started by nurbol in /media/nurbol/a220a7c6-a62d-46c1-bee8-e95553368e28/Downloads/JavaProjects/project (copy))
+2020-05-06 17:39:43.016  INFO 5287 --- [main] com.javaee.project.ToysApplication       : No active profile set, falling back to default profiles: default
+2020-05-06 17:39:43.931  INFO 5287 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-06 17:39:44.023  INFO 5287 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 80ms. Found 5 JPA repository interfaces.
+2020-05-06 17:39:44.731  INFO 5287 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2020-05-06 17:39:44.748  INFO 5287 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-06 17:39:44.749  INFO 5287 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-06 17:39:44.835  INFO 5287 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-06 17:39:44.835  INFO 5287 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1733 ms
+2020-05-06 17:39:45.009  INFO 5287 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-06 17:39:45.068  INFO 5287 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-06 17:39:45.182  INFO 5287 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-06 17:39:45.309  INFO 5287 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-06 17:39:45.533  INFO 5287 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-06 17:39:45.553  INFO 5287 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2020-05-06 17:39:46.331  INFO 5287 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-06 17:39:46.337  INFO 5287 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 17:39:46.823  WARN 5287 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-06 17:39:46.957  INFO 5287 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-06 17:39:47.050  INFO 5287 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-06 17:39:47.257  INFO 5287 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2020-05-06 17:39:47.259  INFO 5287 --- [main] com.javaee.project.ToysApplication       : Started ToysApplication in 4.876 seconds (JVM running for 5.568)
+2020-05-06 17:39:47.853  INFO 5287 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-06 17:39:47.854  INFO 5287 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-06 17:39:47.861  INFO 5287 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2020-05-06 17:40:11.983  INFO 5287 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-06 17:40:11.984  INFO 5287 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 17:40:11.985  INFO 5287 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-05-06 17:40:11.993  INFO 5287 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-05-06 17:40:15.135  INFO 5503 --- [main] com.javaee.project.ToysApplication       : Starting ToysApplication on whydudeman with PID 5503 (/media/nurbol/a220a7c6-a62d-46c1-bee8-e95553368e28/Downloads/JavaProjects/project (copy)/target/classes started by nurbol in /media/nurbol/a220a7c6-a62d-46c1-bee8-e95553368e28/Downloads/JavaProjects/project (copy))
+2020-05-06 17:40:15.143  INFO 5503 --- [main] com.javaee.project.ToysApplication       : No active profile set, falling back to default profiles: default
+2020-05-06 17:40:16.119  INFO 5503 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-06 17:40:16.225  INFO 5503 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 95ms. Found 5 JPA repository interfaces.
+2020-05-06 17:40:17.238  INFO 5503 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2020-05-06 17:40:17.255  INFO 5503 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-06 17:40:17.255  INFO 5503 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-06 17:40:17.372  INFO 5503 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-06 17:40:17.373  INFO 5503 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2128 ms
+2020-05-06 17:40:17.629  INFO 5503 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-06 17:40:17.721  INFO 5503 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-06 17:40:17.933  INFO 5503 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-06 17:40:18.038  INFO 5503 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-06 17:40:18.217  INFO 5503 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-06 17:40:18.236  INFO 5503 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2020-05-06 17:40:19.262  INFO 5503 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-06 17:40:19.267  INFO 5503 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 17:40:19.703  WARN 5503 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-06 17:40:19.843  INFO 5503 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-06 17:40:19.942  INFO 5503 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-06 17:40:20.101  INFO 5503 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2020-05-06 17:40:20.104  INFO 5503 --- [main] com.javaee.project.ToysApplication       : Started ToysApplication in 5.667 seconds (JVM running for 6.305)
+2020-05-06 17:40:24.182  INFO 5503 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-06 17:40:24.183  INFO 5503 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-06 17:40:24.190  INFO 5503 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
