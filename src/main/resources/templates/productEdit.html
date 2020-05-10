@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="col mb-2">
+    <form th:action="@{/products/create}" method="POST" th:object="${productForm}">
+        <h2 class="text-center">Create Category</h2>
+        <div class="form-group">
+            <input type="text" th:field="*{name}" class="form-control" placeholder="Name"/>
+        </div>
+        <div class="form-group">
+            <input type="text" th:field="*{description}" class="form-control" placeholder="Description"/>
+        </div>
+        <div class="form-group">
+            <input type="text" th:field="*{priceDouble}" class="form-control" placeholder="Price"/>
+        </div>
+        <div class="form-group"> Categories
+            <select class="form-control" th:field="*{categoryId}">
+                <option th:each="category : ${categories}"
+                        th:value="${category.id}"
+                        th:text="${category.name}">
+                </option>
+            </select>
+        </div>
+        <div class="form-group"> Stores
+            <select class="form-control" th:field="*{storeId}">
+                <option th:each="store : ${stores}"
+                        th:value="${store.id}"
+                        th:text="${store.name}">
+                </option>
+            </select>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block" value="Create">Create</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

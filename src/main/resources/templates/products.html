@@ -1,0 +1,136 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/products.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" th:href="@{../products}">Great Shops</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
+            <ul class="navbar-nav m-auto">
+                <li class="nav-item m-auto">
+                    <a class="nav-link active" th:href="@{../products}">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{../store}">Stores</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{../categorys}">Categories</a>
+                </li>
+                <li sec:authorize="isAuthenticated() "class="nav-item">
+                    <a class="nav-link"  th:href="@{/logout}">Logout</a>
+                </li>
+                <li sec:authorize="isAnonymous() "class="nav-item">
+                    <a class="nav-link"  th:href="@{../login}">Login</a>
+                </li>
+                <li sec:authorize="isAnonymous() "class="nav-item">
+                    <a class="nav-link"  th:href="@{../registration}">Sign Up</a>
+                </li>
+                <li sec:authorize="isAnonymous() "class="nav-item">
+                    <a class="nav-link"  th:href="@{../index}">Sign Up</a>
+                </li>
+
+            </ul>
+
+            <form class="form-inline my-2 my-lg-0">
+                <div class="input-group input-group-sm">
+                    <form th:action="@{/products/}" th:object="${searchText}">
+                        <input type="text" th:field="*{field}" name="search" id="search" placeholder="Search...">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-secondary btn-number">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+
+                        <a class="btn btn-success btn-sm ml-3" href="cart.html">
+                            <i class="fa fa-shopping-cart"></i> Cart
+                            <span class="badge badge-light">3</span>
+                        </a>
+                    </form>
+                </div>
+        </div>
+    </div>
+</nav>
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">E-COMMERCE CATEGORY</h1>
+        <p class="lead text-muted mb-0">Le Lorem Ipsum est simplement du faux texte employé dans la composition et la
+            mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années
+            1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de
+            polices de texte...</p>
+    </div>
+</section>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a th:href="@{/categorys/getAll}">Category</a></li>
+                    <li class="breadcrumb-item active" th:if="${isBy}" aria-current="page" th:text="${categoryName}">Sub-category</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-3">
+            <div class="card bg-light mb-3">
+                <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Categories
+                </div>
+                <ul class="list-group category_block">
+                    <li th:each="category : ${categories}" class="list-group-item"><a th:text="${category.name}"
+                                                                                      th:href="@{/products/byCategory/{id}(id=${category.id})}"></a>
+                    </li>
+                </ul>
+            </div>
+            <div sec:authorize="hasRole('ROLE_MODERATOR')" class="card bg-light mb-3">
+                <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Moderator Actions
+                </div>
+                <ul class="list-group category_block">
+                    <li><a th:href="@{/products/create}" class="list-group-item">Create new Product</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row">
+                <div th:each="product : ${products}" class="col-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <img class="card-img-top" src="https://dummyimage.com/600x400/55595c/fff" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title"><a th:text="${product.name}" th:href="@{/products/{id}(id=${product.id})}" title="View Product"></a></h4>
+                            <p th:text="${product.description}" class="card-text"></p>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="btn btn-danger btn-block">Price</p>
+                                </div>
+                                <div class="col">
+                                    <a href="#" class="btn btn-success btn-block">Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer --><div th:replace="fragments/footer :: footer"></div>
+
+</body>
+</html>
