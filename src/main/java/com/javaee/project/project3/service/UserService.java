@@ -10,6 +10,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
     @Autowired
@@ -38,5 +40,23 @@ public class UserService {
     }
 
 
+    public User getUserById(Long id) {
+       return userRepo.findById(id).orElseThrow(()->new RuntimeException("NO_USER_FOUND"));
+    }
 
+    public List<User> getAll() {
+        return userRepo.findAll();
+    }
+
+    public void updateUser(Long id, RegistrationForm userForm) {
+        User user=getUserById(id);
+        user.setSurname(userForm.getSurname());
+        user.setName(userForm.getName());
+        user.setEmail(userForm.getEmail());
+        user.setUsername(userForm.getUsername());
+    }
+
+    public void deleteById(Long id) {
+        userRepo.deleteById(id);
+    }
 }

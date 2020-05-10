@@ -29,4 +29,8 @@ public class PriceService {
     public boolean isPriceExists(Long productId,Long storeId){
         return priceRepo.isPriceExists(productId,storeId);
     }
+
+    public Price getPriceById(Long priceId) {
+       return priceRepo.findById(priceId).orElseThrow(()->new RuntimeException());
+    }
 }

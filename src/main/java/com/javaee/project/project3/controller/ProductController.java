@@ -5,15 +5,13 @@ import com.javaee.project.project3.form.ProductForm;
 import com.javaee.project.project3.model.Price;
 import com.javaee.project.project3.model.Product;
 import com.javaee.project.project3.model.ProductCategory;
-import com.javaee.project.project3.service.PriceService;
-import com.javaee.project.project3.service.ProductCategoryService;
-import com.javaee.project.project3.service.ProductService;
-import com.javaee.project.project3.service.StoreService;
+import com.javaee.project.project3.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.OverridesAttribute;
 import java.util.List;
 
 @Controller
@@ -27,6 +25,8 @@ public class ProductController {
     private PriceService priceService;
     @Autowired
     private StoreService storeService;
+    @Autowired
+    private OrderService orderService;
 
     @GetMapping()
     public String getAllProducts(@RequestParam(name = "field",defaultValue = "") String field,Model model) {
@@ -70,13 +70,6 @@ public class ProductController {
         return getProducts(model, products);
     }
 
-
-    @GetMapping(value = "edit/{id}")
-    public String getProductsBySearch(@PathVariable(name = "id") Long id, @ModelAttribute(name = "search") String search, Model model) {
-        List<Product> products = productService.getAllBySearchText(search);
-        return getProducts(model, products);
-    }
-
     @GetMapping("{id}")
     public String getById(@PathVariable Long id, Model model) {
         Product product = productService.getById(id);
@@ -96,8 +89,8 @@ public class ProductController {
 
     @PostMapping("edit/{id}")
     public String editProductWithPrice(@PathVariable Long id, @ModelAttribute ProductForm productForm) {
-        productService.saveFromForm(productForm);
-        return "redirect:";
+        productService.updateFromForm(id,productForm);
+        return "redirect:/products/"+id;
     }
 
     @GetMapping("create")
@@ -106,6 +99,12 @@ public class ProductController {
         model.addAttribute("stores", storeService.getAll());
         model.addAttribute("categories", categoryService.getAllCategories());
         return "productEdit";
+    }
+
+    @GetMapping("products/buy/{priceId}")
+    public String orderProduct(@PathVariable(name = "priceId") Long priceId){
+        orderService.create(priceId);
+        return "redirect:/products";
     }
 
 }
