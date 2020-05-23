@@ -10,8 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.validation.OverridesAttribute;
 import java.util.List;
 
 @Controller
@@ -27,6 +28,8 @@ public class ProductController {
     private StoreService storeService;
     @Autowired
     private OrderService orderService;
+    @Autowired
+    private ImageService imageService;
 
     @GetMapping()
     public String getAllProducts(@RequestParam(name = "field",defaultValue = "") String field,Model model) {
@@ -106,5 +109,19 @@ public class ProductController {
         orderService.create(priceId);
         return "redirect:/products";
     }
+
+    @PostMapping("upload/{id}")
+    public String uploadFile(@PathVariable Long id,@RequestParam("file") MultipartFile file, RedirectAttributes attributes) {
+        String fileName=imageService.uploadImageGetPath(file);
+        productService.setImagePath(fileName,id);
+        return "redirect:/products/"+id;
+    }
+
+    @RequestMapping(value = "image/big/{id}")
+    @ResponseBody
+    public byte[] getImage(@PathVariable("id") Long id){
+        return imageService.getImageById(productService.getById(id));
+    }
+
 
 }

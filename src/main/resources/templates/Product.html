@@ -39,7 +39,8 @@
             <div class="card bg-light mb-3">
                 <div class="card-body">
                     <a href="" data-toggle="modal" data-target="#productModal">
-                        <img class="img-fluid" src="https://dummyimage.com/800x800/55595c/fff"/>
+                        <img class="img-fluid"
+                             th:src="@{/products/image/big/{id}(id=${product.id})}"/>
                         <p class="text-center">Zoom</p>
                     </a>
                 </div>
@@ -110,7 +111,8 @@
                         <td th:text="${price.price}"></td>
                         <td th:text="${price.store.name}"></td>
                         <td><a th:href="@{/products/buy/{id}(id=${price.id})}">Buy</a></td>
-                        <td sec:authorize="hasRole('ROLE_MODERATOR')"><a th:href="@{/products/buy/{id}(id=${price.id})}">Edit</a>
+                        <td sec:authorize="hasRole('ROLE_MODERATOR')"><a
+                                th:href="@{/products/buy/{id}(id=${price.id})}">Edit</a>
                         </td>
                         <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/products/delete/{id}(id=${price.id})}">Delete</a>
                         </td>
@@ -135,6 +137,16 @@
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-block" value="Create">Create</button>
+                </div>
+            </form>
+            <form th:action="@{/products/upload/{id}(id=${product.id})}" method="POST" th:object="${productForm}"
+                  enctype="multipart/form-data">
+                <h2 class="text-center">Upload Image to Product</h2>
+                <div class="form-group">
+                    <input type="file" name="file" class="form-control-file">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block" value="Upload">Upload Image</button>
                 </div>
             </form>
         </div>

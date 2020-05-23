@@ -62,4 +62,10 @@ public class ProductService {
         throw new EntityExistsException("This store already has price on this product");
     }
 
+    public void setImagePath(String fileName, Long id) {
+        Product product=getById(id);
+        product.setBigImagePath(fileName);
+        product.setSmallImagePath(fileName);
+        productRepo.save(product);
+    }
 }

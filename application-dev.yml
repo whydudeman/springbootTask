@@ -15,3 +15,5 @@ spring:
     password:
     initialization-mode: never
 
+file.upload:
+  profileImage: /home/nurbol/images/
