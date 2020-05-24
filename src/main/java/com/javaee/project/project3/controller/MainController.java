@@ -37,7 +37,7 @@ public class MainController {
 
     @RequestMapping("login")
     private String login(Model model) {
-        return "/auth/login";
+        return "auth/login";
     }
 
     @RequestMapping("login-error")
@@ -48,7 +48,7 @@ public class MainController {
 
     @GetMapping("/main")
     private String getMainPage(Model model) {
-        return "/auth/index";
+        return "auth/index";
     }
 
 

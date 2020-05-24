@@ -43,10 +43,10 @@ public class UserRegistrationController {
         }
 
         if (result.hasErrors()) {
-            return "/auth/register";
+            return "auth/register";
         }
 
         userService.create(regForm);
-        return "/auth/index";
+        return "auth/index";
     }
 }

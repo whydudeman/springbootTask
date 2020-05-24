@@ -2,7 +2,6 @@ package com.javaee.project.project3.controller;
 
 import com.javaee.project.auth.UserDetailsImpl;
 import com.javaee.project.project3.form.RegistrationForm;
-import com.javaee.project.project3.model.Role;
 import com.javaee.project.project3.model.User;
 import com.javaee.project.project3.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.security.PermitAll;
 import java.util.ArrayList;
 import java.util.List;
 
