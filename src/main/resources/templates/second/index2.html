@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" xmlns:th="htttp://www.thymeleaf.org">
+<!--<![endif]-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Meghna One page parallax responsive HTML Template ">
+
+    <meta name="author" content="Muhammad Morshed">
+
+    <title>Toy Shop</title>
+
+    <!-- Mobile Specific Meta
+        ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/plugins/themefisher-font/style.css" th:href="@{/plugins/themefisher-font/style.css}">
+    <!-- bootstrap.min css -->
+    <link rel="stylesheet" href="static/plugins/bootstrap/dist/css/bootstrap.min.css" th:href="@{/plugins/bootstrap/dist/css/bootstrap.min.css}">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="static/plugins/animate-css/animate.css" th:href="@{/plugins/animate-css/animate.css}">
+    <!-- Magnific popup css -->
+    <link rel="stylesheet" href="static/plugins/magnific-popup/dist/magnific-popup.css"  th:href="@{/plugins/magnific-popup/dist/magnific-popup.css}">
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" href="static/plugins/slick-carousel/slick/slick.css" th:href="@{/plugins/slick-carousel/slick/slick.css}">
+    <link rel="stylesheet" href="static/plugins/slick-carousel/slick/slick-theme.css" th:href="@{/plugins/slick-carousel/slick/slick-theme.css}">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="static/css/style.css" th:href="@{/css/style.css}">
+
+
+</head>
+
+<body id="body" data-spy="scroll" data-target=".navbar" data-offset="50">
+<section class="hero-area overlay" style="background-image: url('/static/images/banner/hero-area.jpg');">
+    <div class="block">
+        <h1>Toy story</h1>
+        <h2>Welcome to our Shop! You can find anything you want</h2>
+        <p>Discount every day, up to 50%</p>
+        <a data-scroll href="#categories" class="btn btn-transparent">Categories</a>
+    </div>
+</section>
+
+<section class="bg-one about section">
+    <div class="container" id="categories">
+        <div class="row">
+
+            <div class="contact-form col-md-6 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
+                <div class="title text-center wow fadeIn" data-wow-duration="1500ms" >
+                    <h2>All <span class="color">Categories</span> </h2>
+                    <div class="border"></div>
+                </div>
+                <table class="table h3">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="category : ${categories}">
+                        <th th:text="${category.id}" scope="row"></th>
+                        <td th:text="${category.name}"></td>
+                        <td><a th:href="@{/edit/{id}(id=${category.id})}">Edit</a></td>
+                        <td><a th:href="@{/delete/{id}(id=${category.id})}">Delete</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="contact-form col-md-6 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
+                <div class="title text-center wow fadeIn" data-wow-duration="1500ms" >
+                    <h2>Create <span class="color">category</span> </h2>
+                    <div class="border"></div>
+                </div>
+                <form id="contact-form" th:action="@{/create}"
+                      th:object="${formCategory}" method="POST">
+
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" class="form-control" name="name" id="name" th:field="*{name}">
+                    </div>
+                    <div id="cf-submits">
+                        <input type="submit" id="contact-submits" class="btn btn-transparent" value="Submit">
+                    </div>
+
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+<section class="bg-one about section-bg">
+    <div class="container">
+        <div class="row">
+            <div class="contact-form col-md-6 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
+                <div class="title text-center wow fadeIn" data-wow-duration="1500ms" >
+                    <h2>All <span class="color">Toys</span> </h2>
+                    <div class="border"></div>
+                </div>
+                <table class="table h3">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="toy : ${toys}">
+                        <th th:text="${toy.id}" scope="row"></th>
+                        <td th:text="${toy.name}"></td>
+                        <td th:text="${toy.category.name}"></td>
+                        <td th:text="${toy.price}"></td>
+                        <td><a th:href="@{'/editToy/' + ${toy.id}}">Edit</a></td>
+                        <td><a th:href="@{'/deleteToy/'+${toy.id}}">Delete</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <h4><p>Total price: </p><p th:text="${totalPrice}"></p></h4>
+            </div>
+            <div class="contact-form col-md-6 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
+                <div class="title text-center wow fadeIn" data-wow-duration="1500ms" >
+                    <h2>Create <span class="color">Toy</span> </h2>
+                    <div class="border"></div>
+                </div>
+                <form id="contact-forms" th:action="@{/createToy}" th:object="${formToy}" method="POST">
+
+                    <div class="form-group">
+                        <input type="text" placeholder="Name of Toy" class="form-control" name="name" id="toyName" th:field="*{name}" >
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" placeholder="Price of Toy" class="form-control" name="price" id="price" th:field="*{price}">
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" th:field="*{categoryId}">
+                            <option th:each="category : ${categories}"
+                                    th:value="${category.id}"
+                                    th:text="${category.name}">
+                            </option>
+                        </select>
+                    </div>
+
+                    <div id="cf-submit">
+                        <input type="submit" id="contact-submit" class="btn btn-transparent" value="Submit">
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Main jQuery -->
+
+<script type="text/javascript" src="../../static/plugins/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.1 -->
+<script type="text/javascript" src="../../static/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Smooth Scroll -->
+<script type="text/javascript" src="../../static/plugins/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
+<!-- Magnific popup -->
+<script type="text/javascript" src="../../static/plugins/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+<!-- Number Counter Script -->
+<script type="text/javascript" src="../../static/plugins/count-to/jquery.countTo.js"></script>
+<!-- wow.min Script -->
+<script type="text/javascript" src="../../static/plugins/wow/dist/wow.min.js"></script>
+<!-- Custom js -->
+<script type="text/javascript" src="../../static/js/script.js"></script>
+
+</body>
+</html>
